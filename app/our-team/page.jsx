@@ -35,7 +35,7 @@ export default async function Page() {
                                 <div className="relative overflow-hidden">
                                     <img
                                         className="transition duration-300 absolute inset-0 h-full w-full object-cover group-hover:scale-125 group-hover:rotate-12"
-                                        src={`http://localhost:1337${member.photo.formats.medium.url}`}
+                                        src={`${process.env.BE_HOST}${member.photo.formats.medium.url}`}
                                         alt={`${member.name} - ${member.description}`}
                                     />
                                 </div>
