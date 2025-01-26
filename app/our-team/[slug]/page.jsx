@@ -14,7 +14,9 @@ async function fetchTeamMember(slug) {
 
 export default async function Page({params}) {
     const member = await fetchTeamMember(params.slug)
+    console.log(member)
 
-    return<div>{member.name} <h3>{member.description}</h3></div>
-
+    return (
+    <div>{member.name} <h3>{member.description}</h3></div>
+    )
 }
