@@ -2,6 +2,7 @@ import Link from "next/link";
 
 async function getAllTeamMembers() {
     try {
+        // Fetch team members from the API with media data populated
         const MembersPromise = await fetch(`${process.env.BE_HOST}/api/team-members?populate=*`);
 
         // Check for HTTP response errors
@@ -17,13 +18,17 @@ async function getAllTeamMembers() {
     }
 }
 
+// Default exported async function to render the "Our Team" page
 export default async function Page() {
     try {
+        // Fetch the list of all team members
         const members = await getAllTeamMembers();
 
+        // Render the "Our Team" page with team member cards
         return (
             <div>
                 <h1 className="text-4xl mb-6 font-bold text-gray-700">Our Team</h1>
+                {/* Display members in a responsive grid layout */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {members.map((member) => {
                         return (
