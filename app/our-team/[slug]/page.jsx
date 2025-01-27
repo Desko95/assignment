@@ -52,6 +52,16 @@ function OurRenderer(item, index) {
     }
 }
 
+export async function generateStaticParams() {
+    const membersPromise = await fetch(`${process.env.BE_HOST}/api/team-members?populate=*`)
+    const members = await membersPromise.json()
+    return members.data.map(member => {
+        return {
+            slug: member.slug
+        }
+    })
+}
+
 // Default function for dynamically rendering the team member's page
 export default async function Page({ params }) {
     const member = await fetchTeamMember(params.slug);
@@ -74,7 +84,7 @@ export default async function Page({ params }) {
             <nav className="transform -translate-y-1/2">
                 <Link
                     href="/our-team"
-                    className="text-sm bg-gray-600 text-gray-400 hover:bg-gray-500 hover:text-gray-300 inline-block rounded-lg py-3 px-5"
+                    className="text-sm bg-black-800 text-black-800 bg-gray-500 hover:text-gray-300 inline-block rounded-lg py-3 px-5"
                 >
                     &laquo; Back to all team members
                 </Link>

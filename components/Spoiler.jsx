@@ -25,7 +25,7 @@ export default function Spoiler(props) {
 
             {/* Button to close the spoiler when visible */}
             {showSpoiler && (
-                <button onClick={handleClick} className="absolute top-2 right-3 text-gray-500">
+                <button onClick={handleClick} className="absolute top-2 right-3 text-black-800">
                     {/* Simple SVG icon button for closing */}
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="size-5">
                         <path
