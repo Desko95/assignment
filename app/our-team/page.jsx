@@ -27,7 +27,7 @@ export default async function Page() {
         // Render the "Our Team" page with team member cards
         return (
             <div>
-                <h1 className="text-4xl mb-6 font-bold text-gray-700">Our Team</h1>
+                <h1 className="text-4xl mb-6 font-bold text-black-800">Our Team</h1>
                 {/* Display members in a responsive grid layout */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {members.map((member) => {
@@ -61,7 +61,7 @@ export default async function Page() {
         return (
             <div className="p-6">
                 <h1 className="text-3xl font-bold text-red-700 mb-4">Oops! Something went wrong.</h1>
-                <p className="text-gray-700">We couldn't load the team member list. Please try again later.</p>
+                <p className="text-black-800">We couldn't load the team member list. Please try again later.</p>
 
                 {/* Show error details in development  */}
                 {process.env.NODE_ENV === 'development' && (
